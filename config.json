@@ -1,0 +1,16 @@
+{
+   "walletAddress": "",
+   "walletPrivateKey": "",
+   "pairAddress": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+   "tokenAddress": "",
+   "bscNode": "wss://bsc-ws-node.nariox.org:443",
+   "slippage": 1,
+   "gasAmount": 350000,
+   "gasPrice": 7,
+   "buyAmount": 0,
+   "snipeTokenMode": false,
+   "monitorOnly": true,
+   "sellMultiplier": 1,
+   "buyWhenPriceAt": 0.02,
+   "sellWhenPriceAt": 5
+}
