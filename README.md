@@ -51,6 +51,6 @@ F9 - Manual Approve of token
 ```
 
 ## Message
-This is only test project and i wont be selling this. This is 100% safe <br />
+This is only test project and i wont be selling this. This is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
 You can donate small amount of bnb: 0x20002C0055A0e0000D500f020404BAC08e802085 </b> <br />
-If you want the source tho im not confident in my code 
+If you want the source tho im not confident in my code :) 
