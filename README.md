@@ -39,7 +39,7 @@ This is just for testing purposes and my first python project compiled for windo
 * buyAmount - How much (pair address token balance to trade) eg. how much BUSD to trade to target token. Note: set this to 0 to enable buying using all your token 
 * snipeTokenMode - Experimental! use this to listen to upcoming launch in pancakeswap, triggers when liquidity is added 
 * monitorOnly - Set this to true first to know how this app works, this disables auto buy and sell
-* sellMultiplier - Automaticalyl sell token when price multiplier reach, this only work if the value is greater than 1
+* sellMultiplier - Automatically sell token when price multiplier reach, this only work if the value is greater than 1
 * buyWhenPriceAt - Buy token when token price reach below this value
 * sellWhenPriceAt - Sell token when reached target value, disables when sellMultiplier is enabled
 
@@ -52,5 +52,6 @@ F9 - Manual Approve of token
 
 ## Message
 This is only test project and i wont be selling this. This is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
-You can donate small amount of bnb: 0x20002C0055A0e0000D500f020404BAC08e802085 </b> <br />
-If you want the source tho im not confident in my code :) 
+You can donate small amount of bnb: <b>0x20002C0055A0e0000D500f020404BAC08e802085</b> <br />
+If you want the source but im not confident in my code :) <br/><br/>
+I hope this works and help others. email me at jpbandori25@gmail.com
