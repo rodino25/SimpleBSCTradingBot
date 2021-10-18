@@ -3,7 +3,7 @@
    "walletPrivateKey": "",
    "pairAddress": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
    "tokenAddress": "",
-   "bscNode": "wss://bsc-ws-node.nariox.org:443",
+   "bscNode": "https://bsc-dataseed1.ninicoin.io",
    "slippage": 1,
    "gasAmount": 350000,
    "gasPrice": 7,
