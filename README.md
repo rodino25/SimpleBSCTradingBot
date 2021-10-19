@@ -6,7 +6,7 @@ This is just for testing purposes and my first python project compiled for windo
 * Monitor realtime price
 * Trigger buy / sell manually
 * Buy and Sell if certain price is reached
-* Listen to token address for liquidity and auto buy
+* Listen to token address for new liquidity and auto buy
 
 ## Config 
 ```json
@@ -15,7 +15,7 @@ This is just for testing purposes and my first python project compiled for windo
    "walletPrivateKey": "",
    "pairAddress": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
    "tokenAddress": "",
-   "bscNode": "wss://bsc-ws-node.nariox.org:443",
+   "bscNode": "https://bsc-dataseed.binance.org",
    "slippage": 1,
    "gasAmount": 350000,
    "gasPrice": 7,
@@ -32,12 +32,12 @@ This is just for testing purposes and my first python project compiled for windo
 * walletPrivateKey - Your private key 
 * pairAddress - Contract address of coin to use when trading, default: is BUSD since its more stable than BNB make sure you have enough BUSD balance and BNB for gas fees 
 * tokenAddress - Target token address for trading
-* bscNode - BSC Node Server leave blank if you dont have one
+* bscNode - BSC Node Server (HTTP) leave default
 * slippage - Slippage tolerance
 * gasAmount - Max gas amount
 * gasPrice - Gas price
 * buyAmount - How much (pair address token balance to trade) eg. how much BUSD to trade to target token. Note: set this to 0 to enable buying using all your token 
-* snipeTokenMode - Experimental! use this to listen to upcoming launch in pancakeswap, triggers when liquidity is added 
+* snipeTokenMode - Use this to listen to upcoming launch in pancakeswap, triggers when liquidity is added 
 * monitorOnly - Set this to true first to know how this app works, this disables auto buy and sell
 * sellMultiplier - Automatically sell token when price multiplier reach, this only work if the value is greater than 1
 * buyWhenPriceAt - Buy token when token price reach below this value
@@ -52,6 +52,6 @@ F9 - Manual Approve of token
 
 ## Message
 This is only test project and i wont be selling this. This is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
-You can donate small amount of bnb: <b>0x20002C0055A0e0000D500f020404BAC08e802085</b> <br />
-If you want the source but im not confident in my code :) <br/><br/>
-I hope this works and help others. email me at jpbandori25@gmail.com
+You can donate small amount of bnb i dont have gas lol im poor: <b>0x20002C0055A0e0000D500f020404BAC08e802085</b> <br />
+If you want the source code email me :) <br/><br/>
+I hope this works and help others Thank you very much. email me at jpbandori25@gmail.com 
