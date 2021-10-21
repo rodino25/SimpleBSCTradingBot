@@ -6,7 +6,9 @@ This is just for testing purposes and my first python project compiled for windo
 * Monitor realtime price
 * Trigger buy / sell manually
 * Buy and Sell if certain price is reached
-* Listen to token address for new liquidity and auto buy
+* Listen to token address for new liquidity and auto buy 
+* If liquidity is added but buying is still disabled, this waits for the coin to be tradable
+* Sends warning if token is possible honeypot
 
 ## Config 
 ```json
