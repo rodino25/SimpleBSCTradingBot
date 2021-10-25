@@ -52,7 +52,7 @@ F9 - Manual Approve of token
 ```
 
 ## Message
-This is only test project and i wont be selling this. This is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
-You can donate small amount of bnb i dont have gas lol im poor: <b>0x20002C0055A0e0000D500f020404BAC08e802085</b> <br />
+- This is only test project and i wont be selling this. This is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
+- This program consumes a little amount of 0.0005 BNB (exclude gas fees) per use, so make sure to configure everything before using this will serve as a little donation.
 If you want the source code email me :) <br/><br/>
 I hope this works and help others Thank you very much. email me at jpbandori25@gmail.com 
