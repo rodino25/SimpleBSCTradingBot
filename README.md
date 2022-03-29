@@ -1,92 +1,63 @@
-# Simple BSC Trading Bot
+# Simple Scalper Bot
 
-This is just for testing purposes and my first python project compiled for windows os. Im currently working on strategies and it will take a while since im just a newbie. 
+Basic scalping bot for binance smart chain made by python for windows only
 
-## Features
-* auto trade bot if the price of token reach a certain amount it will automatically buy / sell
-* snipe new token for liquidity
-* snipe specific token for liquidity
-* honeypot detection and bypass trading delays
-* use only USDT (bep20) for trading
-* disable auto trades, but can buy / sell manually using shorcut keys
-* can assign shorcut keys in config
-* shows how many USDT you lose and gain after selling token
-* auto sell token if no trades found within x seconds (configurable in config.json)
+## How does it work?
+    This program buys a token at a specified price < (**buyAt**) and will sell if you will gain x1.1 (**multiplier**) profit (buy amount + gasfee) * 1.1 
+    for **BNB** if youre trading with BNB (or ETH if youre on ethereum setup) the **buyAt** is reversed 
+    we will use stable coins BUSD by default as token here so if BNB price > *buyAt*  then it would by BUSD and will sell only if the price drops by 1.1 (buy amount + gasfee / 1.1)
+
+**WARNING:** 
+    * im not responsible if you choose a token that is honeypot
+    * make sure you start with 0 tokens if possible or else it would automatically sell if you mess with configurations 
 
 ## Config 
-```json
-{
+```{
     "privateKey": "",
-    "tokenAddress": "0x9573c88ae3e37508f87649f87c4dd5373c9f31e0",
+    "tokenAddress": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "trading": {
+        "enable": false,
+        "buyAt": 450,
+        "buyAmount": 0.1,
+        "sellMultiplier": 1.1
+    },
     "network": {
-        "symbol": "BNB",
-        "node": "https://bsc-dataseed3.ninicoin.io"
+        "node": "https://bsc-dataseed.binance.org",
+        "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+        "stableCoin": "0xe9e7cea3dedca5984780bafc599bd69add087d56"
     },
     "transaction": {
-        "slippage": 1,
-        "gasLimit": 350000,
-        "gasPrice": 10
-    },
-    "autoTrade": false,
-    "trading": {
-        "buyAmount": 10,
-        "sellMultiplier": 1,
-        "buyingPrice": 1,
-        "sellingPrice": 2,
-        "stopLoss": 0.2
-    },
-    "sniping": {
-        "checkHoneypot": true,
-        "honeypotTimeout": 200,
-        "requireVerified": true,
-        "minimumLiquidity": 50,
-        "sellWaitTime": 60,
-        "blacklistedWords": ["test", "floki"]
-    },
-    "api":{
-        "explorer": ""
+        "slippage": 0.3,
+        "gasLimit": 300000,
+        "gasPrice": 5
     },
     "shorcutKeys": {
-        "buy": "F1",
+        "buy": "F4",
         "sell": "F9",
-        "toggleAutoTrade": "Enter",
-        "approveUSDT": "F4",
-        "approveToken": "F5"
+        "approveToken": "F8",
+        "toggleAutoTrade": "F1"
     },
-    "router": {
-        "routerAddress": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-        "wrappedAddress": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
-        "USDTAddress": "0x55d398326f99059ff775485246999027b3197955"
-    }
+    "refreshRate": 2
 }
 ```
 
-* walletPrivateKey - Your private key 
-* tokenAddress - Target token address for trading (required)
-* network > symbol - BNB or ETH
-* network > node - RPC Node supported http and wss
+* privateKey - Your private key 
+* tokenAddress - Target token address for trading (required) - Default address is BNB contract
+* trading.enable - enable/disable automatic trading
+* trading.buyAt - token price in USD. usage: buy token if price < buyAt, or if target token is BNB - buy BUSD if token > buyAt 
+* trading.sellMultiplier = profit multiplier, if youre trading in large volume you can use smaller value must be greater than 1. eg. 1.01 for scalping
 * slippage - Slippage tolerance
 * gasAmount - Gas limit
 * gasPrice - Gas price
-* autoTrade - toggle auto-trading mode
-* trading > buyAmount - how much USDT to spend every trades (0 - to spend all)
-* trading > sellMultiplier - sell token if you reach certain amount of USDT 
-* trading buyingPrice and sellingPrice - buy / sell price if token price reach around this value
-* trading > stopLoss only works in trading option, auto sell token when price goes below 20% (default 0.2)
-* sniping > checkHoneypot - check if token is honeypot
-* sniping > honeypotTimeout - how much time to wait for token to be tradable before going back to sniping
-* sniping > requireVerified - check if source code is verified in explorer (bscscan)
-* sniping > sellWaitTime - how many seconds to wait if no trades found 
-* sniping > blacklistedWords - blacklist word in token name or symbol (default: ["test", "floki"])
-* api > explorer - your bscscan api 
+* network.node = RPC endpoint default is BSC smart chain
+* network.router = Dex contract address. default pancakeswap
+* network.stableCoin = Stable coin address use to determine token prices, also for storing BNB profits. default is BUSD address
 * shorcutKeys - as is, please check python keyboard module for the list of shorcuts
-* router > routerAddress - pancakeswap router address
-* router > wrappedAddress - WBNB or WETH address if youre on BSC use WBNB contract address
-* router > USDTAddress - USDT contract address, Bep20 
+* refreshRate - how many seconds to refresh backend price monitoring. just leave it to 2 seconds
 
 
 ## Message
-- This is only test project and is 100% safe, always try to make separate wallet address for this kind of projects thank you<br />
-- This program consumes a little amount of 5% tax USDT if you gain morethan 100 USDT
-If you want the source code email me :) <br/><br/>
-I hope this works and help others Thank you very much. email me at jpbandori25@gmail.com 
+- for every sell this program sends tax for 0.0003 bnb for my address as donation<br />
+- if you want to disable tax permanently or the source code email me at jpbandori25@gmail.com 
+- i can make you a program for a small amount only if youre interested
+- donate at 0x0000000000FC56C611BD51353BCD59C24E8a80c4

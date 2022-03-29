@@ -1,44 +1,27 @@
 {
     "privateKey": "",
-    "tokenAddress": "0x9573c88ae3e37508f87649f87c4dd5373c9f31e0",
+    "tokenAddress": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "trading": {
+        "enable": false,
+        "buyAt": 450,
+        "buyAmount": 0.1,
+        "sellMultiplier": 1.1
+    },
     "network": {
-        "symbol": "BNB",
-        "node": "https://bsc-dataseed.binance.org"
+        "node": "https://bsc-dataseed.binance.org",
+        "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+        "stableCoin": "0xe9e7cea3dedca5984780bafc599bd69add087d56"
     },
     "transaction": {
-        "slippage": 1,
-        "gasLimit": 350000,
-        "gasPrice": 10
-    },
-    "autoTrade": false,
-    "trading": {
-        "buyAmount": 10,
-        "sellMultiplier": 1,
-        "buyingPrice": 1,
-        "sellingPrice": 2,
-        "stopLoss": 0.2
-    },
-    "sniping": {
-        "checkHoneypot": true,
-        "honeypotTimeout": 200,
-        "requireVerified": true,
-        "minimumLiquidity": 50,
-        "sellWaitTime": 60,
-        "blacklistedWords": ["test", "floki"]
-    },
-    "api":{
-        "explorer": ""
+        "slippage": 0.3,
+        "gasLimit": 300000,
+        "gasPrice": 5
     },
     "shorcutKeys": {
-        "buy": "F1",
+        "buy": "F4",
         "sell": "F9",
-        "toggleAutoTrade": "Enter",
-        "approveUSDT": "F4",
-        "approveToken": "F5"
+        "approveToken": "F8",
+        "toggleAutoTrade": "F1"
     },
-    "router": {
-        "routerAddress": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-        "wrappedAddress": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
-        "USDTAddress": "0x55d398326f99059ff775485246999027b3197955"
-    }
+    "refreshRate": 2
 }
